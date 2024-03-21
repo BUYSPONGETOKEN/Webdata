@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Style Site</title>
+<style>
+  @keyframes blink {
+    50% { color: #000; }
+  }
+  @keyframes scanline {
+    0% { background-position: 0 -100vh; }
+    100% { background-position: 0 100vh; }
+  }
+  body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    overflow: hidden;
+  }
+  header, section, figure, audio {
+    margin: 20px 0;
+  }
+  .blink {
+    animation: blink 1s step-end infinite;
+  }
+  .scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(255, 255, 255, 0.05) 20px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanline 10s linear infinite;
+  }
+  img, audio {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .download-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 5px 10px; /* Reduced padding */
+  background: #0f0;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 12px; /* Reduced font size */
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="scanlines"></div>
+  <header>
+    <h1 class="blink">First Clue to Wallet #1</h1>
+  </header>
+  <section>
+    <p>Using cryptography and steganography, you will have the chance to uncover the reocvery phrase for 5 wallets containing a certain amount of SPONGE Token. <br> Work togother if you get stuck - Request clues or hints on Twitter after 45 minutes of no one finding a wallet. Once found all wallets are found, and announcement will be made..</p>
+  </section>
+  <figure>
+    <img src="29321.jpg" alt="The recovery phrase is in two parts. Both are hidden locally." onclick="document.getElementById('audio-player').play()">
+    <figcaption></figcaption>
+  </figure>
+  <section>
+    <audio id="audio-player" style="display:none;">
+      <source src="FirstHint.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <a href="https://www.dropbox.com/scl/fo/y346e5qze18ii9fzhhe7r/h?rlkey=l4pd3qevmc5ef8h0jc39ekz47&dl=0" target="_blank" class="external-link-btn">Enter</a>
+  </section>
+</body>
+</html>
